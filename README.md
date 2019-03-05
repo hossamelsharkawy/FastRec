@@ -10,7 +10,7 @@ This is an Android project allowing to ‏using RecyclerView in the simplest way
 # Quick start
 
   ```kotlin
-  <code>
+ 
  FastRec.Builder<String>(this)
             .rec(rec_)
             .row(R.layout.item)
@@ -23,5 +23,5 @@ This is an Android project allowing to ‏using RecyclerView in the simplest way
                 add("5")
             })
             .build()
-  </code>
+  
   ```
