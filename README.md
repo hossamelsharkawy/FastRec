@@ -95,14 +95,16 @@ dataControl.addNewItem("5")
 
 
 //Remove Item
-dataControl.removeItem("5")  //remove item by value
-dataControl.removeItem(0)   // remove item by index
+dataControl.removeItem("5") //remove item by index
+dataControl.removeItem(0)  // remove item by value
  ```
  
 
 
 
+
 **Other method :**  
+
 |      Method          |     Job                                     
 |----------------      |----------------  
 |setData(array: ArrayList<Model>)       |set data by copy          
