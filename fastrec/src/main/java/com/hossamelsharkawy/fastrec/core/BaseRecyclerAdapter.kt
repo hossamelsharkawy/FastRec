@@ -1,21 +1,19 @@
-package hossamelshrkawy.fastrec
+package com.hossamelsharkawy.fastrec.core
 
 import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import java.util.*
 
 
 /**
  * Created by Hossam Elsharkawy
- * 0201099197556
- *
- *
  * on 27/06/17.
  */
 
-abstract class BaseRecyclerAdapter<Holder : RecyclerView.ViewHolder, Model>(val context: Activity) : RecyclerView.Adapter<Holder>() {
+abstract class BaseRecyclerAdapter<Holder : RecyclerView.ViewHolder, Model>
+
+    (context: Activity) : RecyclerView.Adapter<Holder>() {
 
     var inflater: LayoutInflater = context.layoutInflater
 
@@ -24,8 +22,6 @@ abstract class BaseRecyclerAdapter<Holder : RecyclerView.ViewHolder, Model>(val 
     private var data: ArrayList<Model> = ArrayList()
 
     fun getData() = data
-    // fun getData() = if (data.size > 0) data else null
-
 
     val size: Int
         get() = data.size
@@ -59,33 +55,24 @@ abstract class BaseRecyclerAdapter<Holder : RecyclerView.ViewHolder, Model>(val 
     }
 
     fun removeItem(index: Int) {
-
-        /*  this.data.removeAt(index).also {
-              notifyDataSetChanged()
-          }*/
         if (data.isEmpty()) return
         this.data.removeAt(index).also {
             notifyItemRemoved(index).also {
                 notifyItemRangeChanged(index, size)
             }
         }
-
-
     }
 
     fun replaceData(data: ArrayList<Model>) {
         this.data.clear()
         this.data.addAll(data)
         notifyDataSetChanged()
-
     }
-
 
 
     fun setDataNoNotify(data: ArrayList<Model>) {
         this.data = data
     }
-
 
     fun updateItem(pos: Int) = notifyItemChanged(pos)
 
